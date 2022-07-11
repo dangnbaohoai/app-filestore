@@ -12,7 +12,7 @@ const Image = () => {
         // sx={{ display: 'inline-block' }}
         >
             <CardMedia
-                src={`${API}/filestore/picture/${record.fileId}/1200/1200/${record.name}`}
+                src={`${API}/filestore/picture/${record.fileId}/${record.width}/${record.height}/${record.name}`}
                 component="img"
                 alt=""
             sx={{ maxWidth: '100%', maxHeight: '100%' }}

@@ -5,7 +5,7 @@ import {
     Datagrid,
     EditButton,
     SearchInput,
-    DateField
+    DateField,
 } from 'react-admin';
 
 const orderFilters = [

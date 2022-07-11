@@ -9,9 +9,7 @@ import {
     TextInput,
     SearchInput,
     ReferenceInput,
-    // AutocompleteInput,
     ShowButton,
-    // ReferenceArrayInput,
     AutocompleteArrayInput,
 } from "react-admin";
 import { Tag } from "../../types";
@@ -29,9 +27,6 @@ const orderFilters = [
             }
         />
     </ReferenceInput>,
-    // <ReferenceArrayInput source="tags" reference="tags">
-    //     <AutocompleteArrayInput fullWidth label={false} source="tags" optionText="name" optionValue="id" />
-    // </ReferenceArrayInput>,
     <DateInput source="createdTime" />,
     <DateInput source="downloadTime" />,
     <TextInput source="downloadTotal" />,
@@ -54,7 +49,7 @@ export const PhotoList = () => {
                 </ReferenceField>
                 <TextField source="name" textAlign="center" />
                 <TextField source="type" textAlign="center" />
-                <TextField source="size" textAlign="center" />
+                <TextField source="size" textAlign="center" label={"Size(Kb)"}/>
                 <SegmentsField source="tags" textAlign="center" />
                 {/* <TextField source="createdTime" textAlign="center" />
                 <TextField source="downloadTime" textAlign="center" />

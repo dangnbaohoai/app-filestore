@@ -21,7 +21,7 @@ import { Product } from '../../types';
 
 const ProductTitle = () => {
     const record = useRecordContext<Product>();
-    return record ? <span>Poster "{record.name}"</span> : null;
+    return record ? <span>Image "{record.name}"</span> : null;
 };
 
 const PhotoShow = () => {

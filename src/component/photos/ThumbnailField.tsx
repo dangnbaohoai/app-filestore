@@ -36,7 +36,7 @@ import { API } from '../../App'
 const Img = styled('img')({
     width: 240,
     height: 135,
-    objectFit: 'fill',
+    objectFit: 'scale-down',
     maxWidth: 360,
     maxHeight: 180,
     verticalAlign: 'middle'
@@ -49,6 +49,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogActions-root': {
         padding: theme.spacing(1)
     }
+
 }))
 
 export interface DialogTitleProps {
@@ -81,6 +82,20 @@ const BootstrapDialogTitle = (props: DialogTitleProps) => {
     )
 }
 
+const Size = () => {
+    const record = useRecordContext<Product>();
+    return record ?
+        <span
+            style={{
+                margin: '10px',
+                fontSize: '16px',
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+            {record.width}x{record.height}
+        </span> : null
+};
+
 const ThumbnailField = (props: { source?: string; label?: string }) => {
     const [open, setOpen] = useState(false)
     const record = useRecordContext<Product>()
@@ -98,12 +113,12 @@ const ThumbnailField = (props: { source?: string; label?: string }) => {
         <>
             <Button onClick={handleClickOpen}>
                 <Img
-                    src={`${API}/filestore/picture/${record.fileId}/400/400/${record.name}`}
+                    src={`${API}/filestore/picture/${record.fileId}/800/800/${record.name}`}
                     alt=""
-                    style={{width: 'auto', height: 'auto'}}
+                    style={{ width: 'auto', height: 'auto' }}
                 />
             </Button>
-            <BootstrapDialog aria-labelledby="customized-dialog-title" open={open} fullWidth>
+            <BootstrapDialog aria-labelledby="customized-dialog-title" open={open}  >
                 <BootstrapDialogTitle
                     id="customized-dialog-title"
                     onClose={handleClose}
@@ -112,10 +127,11 @@ const ThumbnailField = (props: { source?: string; label?: string }) => {
                 </BootstrapDialogTitle>
                 <DialogContent dividers style={{ padding: 0, }}>
                     <img
-                        src={`${API}/filestore/picture/${record.fileId}/2180/2180/${record.name}`}
+                        src={`${API}/filestore/picture/${record.fileId}/${record.width}/${record.height}/${record.name}`}
                         alt={record.name}
-                        style={{ width: '100%',}}
+                        style={{ width: '100%', }}
                     />
+                    <Size />
                 </DialogContent>
             </BootstrapDialog>
         </>

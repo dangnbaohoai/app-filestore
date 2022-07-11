@@ -22,6 +22,14 @@ const ProductTitle = () => {
   return record ? <span>Image "{record.name}"</span> : null;
 };
 
+const Size = () => {
+  const record = useRecordContext<Product>();
+  return record ?
+    <span style={{margin: '20px', fontSize: '16px'}}>
+      {record.width}x{record.height}
+    </span> : null
+};
+
 const PhotoEdit = () => {
   return (
     <Edit title={<ProductTitle />}>
@@ -37,6 +45,9 @@ const PhotoEdit = () => {
           >
             <Grid item xs={6}>
               <Image />
+              <Box display="flex" justifyContent="center">
+                <Size/>
+              </Box>
             </Grid>
             <Grid item xs={6}>
               <Box display="flex" alignItems="center">
@@ -54,7 +65,7 @@ const PhotoEdit = () => {
                   <TextField source="id" fontSize={16} fullWidth />
                 </Grid>
               </Box>
-              
+
               <Box display="flex" alignItems="center">
                 <Grid item xs={3}>
                   <Typography
@@ -86,7 +97,7 @@ const PhotoEdit = () => {
                   <TextField source="size" fontSize={16} fullWidth />
                 </Grid>
               </Box>
-              
+
               <Box display="flex" alignItems="center">
                 <Grid item xs={3}>
                   <Typography

@@ -16,7 +16,7 @@ import { Product } from '../../types';
 
 const TagTitle = () => {
     const record = useRecordContext<Product>();
-    return record ? <span>Tag "{record.tag}"</span> : null;
+    return record ? <span>Tag "{record.name}"</span> : null;
 };
 const TagEdit = () => {
     return (
