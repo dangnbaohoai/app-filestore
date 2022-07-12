@@ -125,7 +125,12 @@ const ThumbnailField = (props: { source?: string; label?: string }) => {
                 >
                     {record.name}
                 </BootstrapDialogTitle>
-                <DialogContent dividers style={{ padding: 0, }}>
+                <DialogContent
+                    dividers
+                    style={{
+                        // padding: '200px',
+                    }}
+                >
                     <img
                         src={`${API}/filestore/picture/${record.fileId}/${record.width}/${record.height}/${record.name}`}
                         alt={record.name}

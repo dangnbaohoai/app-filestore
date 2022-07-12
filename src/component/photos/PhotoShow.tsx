@@ -6,7 +6,7 @@ import {
     TextField,
     Tab,
     ReferenceArrayField,
-    SingleFieldList, 
+    SingleFieldList,
     ChipField
 } from "react-admin";
 import {
@@ -52,7 +52,13 @@ const PhotoShow = () => {
                                     />
                                     <ReferenceArrayField label="tags" reference="tags" source="tags">
                                         <SingleFieldList>
-                                            <ChipField source="name" color="info" variant="outlined" />
+                                            <ChipField
+                                                source="name"
+                                                style={{
+                                                    backgroundColor: 'rgb(194, 224, 255)',
+                                                    color: 'rgb(0, 127, 255)',
+                                                    fontWeight: '700'
+                                                }} />
                                         </SingleFieldList>
                                     </ReferenceArrayField>
                                 </Stack>
@@ -74,6 +80,7 @@ const PhotoShow = () => {
                                     <TextField source="id" fontSize={16} fullWidth />
                                 </Grid>
                             </Box>
+
                             <Box display="flex" alignItems="center">
                                 <Grid item xs={3} >
                                     <Typography

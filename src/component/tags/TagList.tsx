@@ -20,8 +20,8 @@ export const TagList = () => (
         <Datagrid>
             <TextField source="id" textAlign="center" />
             <TextField source="name" textAlign="center" />
-            <DateField showTime source="createdAt" textAlign="center" />
-            <DateField showTime source="updatedAt" textAlign="center" />
+            <DateField showTime source="createdAt" textAlign="center" locales="fr-FR"/>
+            <DateField showTime source="updatedAt" textAlign="center" locales="fr-FR"/>
             <EditButton/>
         </Datagrid>
     </List>

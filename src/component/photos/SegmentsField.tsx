@@ -12,7 +12,12 @@ const SegmentsField = (props: FieldProps) => {
   return (
     <Stack direction="row" gap={1} flexWrap="wrap">
       {record.tags.map((item, index) => (
-        <Chip key={index} label={item.name} color="info" variant="outlined" />
+        <Chip key={index} label={item.name} style={{
+          backgroundColor: 'rgb(194, 224, 255)',
+          color: 'rgb(0, 127, 255)',
+          fontWeight: '700'
+        }}
+        />
       ))}
     </Stack>
   )

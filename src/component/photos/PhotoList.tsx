@@ -6,14 +6,15 @@ import {
     ReferenceField,
     EditButton,
     DateInput,
-    TextInput,
+    // TextInput,
     SearchInput,
     ReferenceInput,
     ShowButton,
     AutocompleteArrayInput,
+    DateField,
 } from "react-admin";
 import { Tag } from "../../types";
-import SegmentsField from "./SegmentsField";
+// import SegmentsField from "./SegmentsField";
 import ThumbnailField from "./ThumbnailField";
 
 const orderFilters = [
@@ -27,9 +28,11 @@ const orderFilters = [
             }
         />
     </ReferenceInput>,
-    <DateInput source="createdTime" />,
-    <DateInput source="downloadTime" />,
-    <TextInput source="downloadTotal" />,
+    <DateInput source="createdTime_from"/>,
+    <DateInput source="createdTime_to"/>,
+    <DateInput source="downloadTime_from"/>,
+    <DateInput source="downloadTime_to"/>,
+    // <TextInput source="downloadTotal" />,
 ];
 export const PhotoList = () => {
 
@@ -37,10 +40,10 @@ export const PhotoList = () => {
         <List
             filters={orderFilters}
             perPage={5}
-            sort={{
-                field: 'size',
-                order: 'desc',
-            }}
+            // sort={{
+            //     field: 'id',
+            //     order: 'desc',
+            // }}
         >
             <Datagrid>
                 <ThumbnailField source="" label="Images" />
@@ -50,10 +53,10 @@ export const PhotoList = () => {
                 <TextField source="name" textAlign="center" />
                 <TextField source="type" textAlign="center" />
                 <TextField source="size" textAlign="center" label={"Size(Kb)"}/>
-                <SegmentsField source="tags" textAlign="center" />
-                {/* <TextField source="createdTime" textAlign="center" />
-                <TextField source="downloadTime" textAlign="center" />
-                <TextField source="downloadTotal" textAlign="center" /> */}
+                {/* <SegmentsField source="tags" textAlign="center" /> */}
+                <DateField source="createdAt" textAlign="center" showTime locales="fr-FR"/>
+                <DateField source="downloadedAt" textAlign="center" showTime locales="fr-FR"/>
+                {/* <TextField source="downloadTotal" textAlign="center" /> */}
                 <EditButton />
                 <ShowButton />
             </Datagrid>
