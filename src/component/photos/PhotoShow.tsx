@@ -13,7 +13,7 @@ import {
     Stack,
     Typography,
     Grid,
-    Box
+    Box,
 } from '@mui/material';
 import Image from './Image';
 import { Product } from '../../types';
@@ -57,7 +57,8 @@ const PhotoShow = () => {
                                                 style={{
                                                     backgroundColor: 'rgb(194, 224, 255)',
                                                     color: 'rgb(0, 127, 255)',
-                                                    fontWeight: '700'
+                                                    fontWeight: '700',
+                                                    
                                                 }} />
                                         </SingleFieldList>
                                     </ReferenceArrayField>
