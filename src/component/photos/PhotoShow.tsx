@@ -58,7 +58,6 @@ const PhotoShow = () => {
                                                     backgroundColor: 'rgb(194, 224, 255)',
                                                     color: 'rgb(0, 127, 255)',
                                                     fontWeight: '700',
-                                                    
                                                 }} />
                                         </SingleFieldList>
                                     </ReferenceArrayField>

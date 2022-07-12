@@ -28,10 +28,10 @@ const orderFilters = [
             }
         />
     </ReferenceInput>,
-    <DateInput source="createdTime_from"/>,
-    <DateInput source="createdTime_to"/>,
-    <DateInput source="downloadTime_from"/>,
-    <DateInput source="downloadTime_to"/>,
+    <DateInput source="createdAt_from"/>,
+    <DateInput source="createdAt_to"/>,
+    <DateInput source="downloadedAt_from"/>,
+    <DateInput source="downloadedAt_to"/>,
     // <TextInput source="downloadTotal" />,
 ];
 export const PhotoList = () => {
