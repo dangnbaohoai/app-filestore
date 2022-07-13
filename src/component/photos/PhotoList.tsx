@@ -14,8 +14,9 @@ import {
     DateField,
 } from "react-admin";
 import { Tag } from "../../types";
-// import SegmentsField from "./SegmentsField";
+import SegmentsField from "./SegmentsField";
 import ThumbnailField from "./ThumbnailField";
+
 
 const orderFilters = [
     <SearchInput source="q" alwaysOn />,
@@ -28,7 +29,7 @@ const orderFilters = [
             }
         />
     </ReferenceInput>,
-    <DateInput source="createdAt_from"/>,
+    <DateInput source="createdAt_from" />,
     <DateInput source="createdAt_to"/>,
     <DateInput source="downloadedAt_from"/>,
     <DateInput source="downloadedAt_to"/>,
@@ -52,10 +53,10 @@ export const PhotoList = () => {
                 </ReferenceField>
                 <TextField source="name" textAlign="center" />
                 <TextField source="type" textAlign="center" />
-                <TextField source="size" textAlign="center" label={"Size(Kb)"}/>
-                {/* <SegmentsField source="tags" textAlign="center" /> */}
-                <DateField source="createdAt" textAlign="center" showTime locales="fr-FR"/>
-                <DateField source="downloadedAt" textAlign="center" showTime locales="fr-FR"/>
+                {/* <TextField source="size" textAlign="center" label={"Size(Kb)"}/> */}
+                <SegmentsField source="tags" textAlign="center" />
+                <DateField source="createdAt" textAlign="center" showTime locales="fr-FR" label="Created Time"/>
+                <DateField source="downloadedAt" textAlign="center" showTime locales="fr-FR" label="Download Time"/>
                 {/* <TextField source="downloadTotal" textAlign="center" /> */}
                 <EditButton />
                 <ShowButton />

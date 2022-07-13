@@ -9,13 +9,21 @@ const Image = () => {
     if (!record) return null;
     return (
         <Card
-        // sx={{ display: 'inline-block' }}
+            sx={{
+                display: 'flex',
+                maxHeight: '500px',
+                boxShadow: 'none',
+            }}
         >
             <CardMedia
                 src={`${API}/filestore/picture/${record.fileId}/${record.width}/${record.height}/${record.name}`}
                 component="img"
                 alt=""
-            sx={{ maxWidth: '100%', maxHeight: '100%' }}
+                sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain'
+                }}
             />
         </Card>
     );

@@ -6,12 +6,12 @@ import Dashboard from './component/Dashboard';
 import photos from './component/photos';
 import tags from './component/tags';
 import authProvider from './component/authProvider';
-import {Layout} from './component/layout';
+import {Login, Layout} from './component/layout';
 import Configuration from './component/DarkMode';
 import { LocalOffer, PhotoLibrary,} from '@mui/icons-material';
 
 
-export const API = "http://192.168.2.19:7979"
+export const API = "http://192.168.2.22:7979"
 // const dataProvider = jsonServerProvider("http://localhost:3001");
 const dataProvider = jsonServerProvider(`${API}/api`);
 const App = () => {
@@ -21,6 +21,7 @@ const App = () => {
       layout={Layout}
       dataProvider={dataProvider}
       authProvider={authProvider}
+      loginPage={Login}
     >
       <CustomRoutes>
         <Route path="/configuration" element={<Configuration />} />

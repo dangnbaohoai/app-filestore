@@ -3,7 +3,7 @@ import {
   Edit,
   FormTab,
   TabbedForm,
-  // TextInput,
+  DateField,
   useRecordContext,
   TextField,
   ReferenceArrayInput,
@@ -25,7 +25,7 @@ const ProductTitle = () => {
 const Size = () => {
   const record = useRecordContext<Product>();
   return record ?
-    <span style={{margin: '20px', fontSize: '16px'}}>
+    <span style={{ margin: '20px', fontSize: '16px' }}>
       {record.width}x{record.height}
     </span> : null
 };
@@ -46,7 +46,7 @@ const PhotoEdit = () => {
             <Grid item xs={6}>
               <Image />
               <Box display="flex" justifyContent="center">
-                <Size/>
+                <Size />
               </Box>
             </Grid>
             <Grid item xs={6}>
@@ -114,66 +114,53 @@ const PhotoEdit = () => {
                 </Grid>
               </Box>
 
-              {/* <Box display="flex" alignItems="center">
-                <Grid item xs={3}>
+              <Box display="flex" alignItems="center">
+                <Grid item xs={3} >
                   <Typography
                     fontWeight={600}
                     variant="subtitle2"
                     component="div"
-                    children="Created Time:"
+                    children="File Url"
                     fontSize={18}
                     m={1}
                   />
                 </Grid>
-                <Grid item xs={9}>
-                  <TextField source="createdTime" fontSize={16} fullWidth />
+                <Grid item xs={9} >
+                  <TextField source="fileUrl" fontSize={16} fullWidth />
                 </Grid>
               </Box>
+
               <Box display="flex" alignItems="center">
-                <Grid item xs={3}>
+                <Grid item xs={3} >
                   <Typography
                     fontWeight={600}
                     variant="subtitle2"
                     component="div"
-                    children="Download Time:"
+                    children="Created At"
                     fontSize={18}
                     m={1}
                   />
                 </Grid>
-                <Grid item xs={9}>
-                  <TextField source="downloadTime" fontSize={16} fullWidth />
+                <Grid item xs={9} >
+                  <DateField source="createdAt" fontSize={16} fullWidth showTime />
                 </Grid>
               </Box>
+
               <Box display="flex" alignItems="center">
-                <Grid item xs={3}>
+                <Grid item xs={3} >
                   <Typography
                     fontWeight={600}
                     variant="subtitle2"
                     component="div"
-                    children="Download Total:"
+                    children="Download At"
                     fontSize={18}
                     m={1}
                   />
                 </Grid>
-                <Grid item xs={9}>
-                  <TextField source="downloadTotal" fontSize={16} fullWidth />
+                <Grid item xs={9} >
+                  <DateField source="downloadedAt" fontSize={16} fullWidth showTime />
                 </Grid>
               </Box>
-              <Box display="flex" alignItems="center">
-                <Grid item xs={3}>
-                  <Typography
-                    fontWeight={600}
-                    variant="subtitle2"
-                    component="div"
-                    children="Url:"
-                    fontSize={18}
-                    m={1}
-                  />
-                </Grid>
-                <Grid item xs={9}>
-                  <TextField source="url" fontSize={16} fullWidth />
-                </Grid>
-              </Box> */}
 
               <Box display="flex" alignItems="center">
                 <Grid item xs={3}>

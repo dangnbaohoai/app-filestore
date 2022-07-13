@@ -113,12 +113,12 @@ const ThumbnailField = (props: { source?: string; label?: string }) => {
         <>
             <Button onClick={handleClickOpen}>
                 <Img
-                    src={`${API}/filestore/picture/${record.fileId}/800/800/${record.name}`}
+                    src={`${API}/filestore/picture/${record.fileId}/400/300/${record.name}`}
                     alt=""
                     style={{ width: 'auto', height: 'auto' }}
                 />
             </Button>
-            <BootstrapDialog aria-labelledby="customized-dialog-title" open={open}  >
+            <BootstrapDialog aria-labelledby="customized-dialog-title" open={open} maxWidth='lg'>
                 <BootstrapDialogTitle
                     id="customized-dialog-title"
                     onClose={handleClose}
@@ -126,15 +126,19 @@ const ThumbnailField = (props: { source?: string; label?: string }) => {
                     {record.name}
                 </BootstrapDialogTitle>
                 <DialogContent
-                    dividers
-                    style={{
-                        // padding: '200px',
-                    }}
+                    dividers    
                 >
                     <img
                         src={`${API}/filestore/picture/${record.fileId}/${record.width}/${record.height}/${record.name}`}
                         alt={record.name}
-                        style={{ width: '100%', }}
+                        style={{
+                            // width: '100%',
+                            // height: '100%'
+                            maxWidth: '100%',
+                            // // objectFit: 'fill',
+                            minHeight: '400px',
+                            maxHeight: '600px'
+                        }}
                     />
                     <Size />
                 </DialogContent>

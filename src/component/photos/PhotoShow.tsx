@@ -7,7 +7,8 @@ import {
     Tab,
     ReferenceArrayField,
     SingleFieldList,
-    ChipField
+    ChipField,
+    DateField
 } from "react-admin";
 import {
     Stack,
@@ -129,54 +130,54 @@ const PhotoShow = () => {
                                 </Grid>
                             </Box>
 
-                            {/* <Box display="flex" alignItems="center">
+                            <Box display="flex" alignItems="center">
                                 <Grid item xs={3} >
                                     <Typography
                                         fontWeight={600}
                                         variant="subtitle2"
                                         component="div"
-                                        children="Created Time"
+                                        children="File Url"
                                         fontSize={18}
                                         m={1}
                                     />
                                 </Grid>
                                 <Grid item xs={9} >
-                                    <TextField source="createdTime" fontSize={16} fullWidth />
+                                    <TextField source="fileUrl" fontSize={16} fullWidth />
                                 </Grid>
-                            </Box> */}
+                            </Box>
 
-                            {/* <Box display="flex" alignItems="center">
+                            <Box display="flex" alignItems="center">
                                 <Grid item xs={3} >
                                     <Typography
                                         fontWeight={600}
                                         variant="subtitle2"
                                         component="div"
-                                        children="Download Time"
+                                        children="Created At"
                                         fontSize={18}
                                         m={1}
                                     />
                                 </Grid>
                                 <Grid item xs={9} >
-                                    <TextField source="downloadTime" fontSize={16} fullWidth />
+                                    <DateField source="createdAt" fontSize={16} fullWidth showTime/>
                                 </Grid>
-                            </Box> */}
+                            </Box>
 
-                            {/* <Box display="flex" alignItems="center">
+                            <Box display="flex" alignItems="center">
                                 <Grid item xs={3} >
                                     <Typography
                                         fontWeight={600}
                                         variant="subtitle2"
                                         component="div"
-                                        children="Download Total"
+                                        children="Download At"
                                         fontSize={18}
                                         m={1}
                                     />
                                 </Grid>
                                 <Grid item xs={9} >
-                                    <TextField source="downloadTotal" fontSize={16} fullWidth />
+                                    <DateField source="downloadedAt" fontSize={16} fullWidth showTime/>
                                 </Grid>
+                            </Box>
 
-                            </Box> */}
                         </Grid>
                     </Grid>
                 </Tab>

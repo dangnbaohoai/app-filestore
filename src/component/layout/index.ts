@@ -1,3 +1,4 @@
 import Layout from "./Layout"
 import AppBar from "./AppBar"
-export {AppBar,Layout}
+import Login from "../LoginPage"
+export {AppBar,Layout, Login}
